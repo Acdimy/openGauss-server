@@ -114,7 +114,7 @@ class OpenGaussMetric:
     @property
     def current_locks_count(self):
         return self._get_numeric_metric(
-            "select count(1) from pg_locks where transactionid in (select transaction from pg_prepared_xacts)")
+            "select count(1) from pg_locks where transactionid in (select transaction from pg_prepared_xacts);")
 
     @property
     def checkpoint_dirty_writing_time_window(self):
